@@ -2,7 +2,7 @@
 
 const readlineSync = require("readline-sync")
 
-//데이터 생성
+//데이터 생성 => 배열 안에 객체 리터럴로 생성.
 const movies = [
     {action : 12, kiss : 2, category :'A'},  //암살
     {action : 2, kiss : 14, category :'M'},  //어바웃타임
@@ -31,7 +31,7 @@ const target = {action: actionCut, kiss: kissCut} //반지의 제왕
 // 중괄호가 없으면 여기 작성한 값이 무조건 반환값이다.
 //console.log(movies)
 
-//중괄호가 있으면 리턴이라는 값을 써야한다.
+//sort 함수 사용 , 무조건 return 필수로 사용해야한다. (중괄호)가 있으면 return 이라는 값을 써야한다.
 movies.sort((a, b) => {
   const disA = Math.sqrt(Math.pow(a.action - target.action, 2) + Math.pow(a.kiss - target.kiss , 2)) // target 부터 A 까지의 거리를 구한다.
   const disB = Math.sqrt(Math.pow(b.action - target.action, 2) + Math.pow(b.kiss - target.kiss , 2)) // target 부터 B 까지의 거리를 구한다.
